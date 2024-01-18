@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--document type is html-->
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/styles.css" />
+     <!--link the css file to the html file-->
+    <!--rel, short for relationship, what exactly are we linking in-->
+    <!--href, path for the file we're trying to load-->
+
+  </head>
+
+  <body>
+    
+    {{>header}}
+     <!--<h1>{{title}} {{name}}<h1>-->
+       <h2>{{>footer}}</h2> 
+    <p>Created by {{name}}</p>
+    <form>
+      <input placeholder="Location">
+      <button>Search</button>
+    </form>
+    <p id="message-1"></p>
+    <p id="message-2"></p>
+    <script src="/js/app.js"></script> 
+  </body>
+</html>
