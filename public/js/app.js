@@ -1,5 +1,3 @@
-console.log("client side js is loaded");
-
 //.then() method of a promise instances takes up 2 arguments. callback functions and rejected cases of the promise
 
 // fetch("http://puzzle.mead.io/puzzle").then((response) => {
