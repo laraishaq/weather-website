@@ -9,6 +9,7 @@ const app = express();
 const publicDirectoryApp = path.join(__dirname, "../public"); //generate the path in the public folder
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials"); //partials are used for things you'll use more than once
+const port = process.env.PORT || 3000; //define the port given by heroku, it's dynamic now not static; || will run and run locally
 
 //set up handlebars engine for dynamic templates, and views locations
 app.set("view engine", "hbs"); // you have to set this up exactly so express knows which template engine you're trying to set up
@@ -119,6 +120,6 @@ app.get("*", (req, res) => {
 //app.com/help
 //app.com/about
 
-app.listen(3000, () => {
-  console.log("server is running"); //will never show up on the browser
+app.listen(port, () => {
+  console.log("server is running on port" + port); //will never show up on the browser
 });

@@ -23,18 +23,16 @@ weatherForm.addEventListener("submit", (e) => {
   messageTwo.textContent = "";
 
   //we only fetch when the form is submitted
-  fetch("http://localhost:3000/weather?address=" + location).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          messageOne.textContent = data.error;
-        } else {
-          messageOne.textContent = data.location;
-          messageTwo.textContent = data.forecast;
-        }
-      });
-    }
-  );
+  fetch("/weather?address=" + location).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        messageOne.textContent = data.error;
+      } else {
+        messageOne.textContent = data.location;
+        messageTwo.textContent = data.forecast;
+      }
+    });
+  });
 });
 //.json function within fetch
 //then parsing the response to a json object
